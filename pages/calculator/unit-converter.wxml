@@ -1,0 +1,84 @@
+<!-- 多领域单位换算界面 -->
+<view class="container">
+  <!-- 标题栏 -->
+  <view class="page-header"><text class="page-title">单位换算器</text></view>
+
+  <!-- 领域选择 -->
+  <view class="section">
+    <text class="label">选择领域</text>
+    <picker bindchange="onDomainChange" value="{{selectedDomain}}" range="{{domains}}">
+      <view class="picker">
+        {{domains[selectedDomain]}}
+        <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 类别选择 -->
+  <view class="section">
+    <text class="label">单位类别</text>
+    <picker bindchange="onCategoryChange" value="{{selectedCategory}}" range="{{categories}}">
+      <view class="picker">
+        {{categories[selectedCategory]}}
+        <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 单位转换区域 -->
+  <view class="conversion-area">
+    <!-- 从单位 -->
+    <view class="unit-selector">
+      <picker bindchange="onFromUnitChange" value="{{selectedFromUnit}}" range="{{fromUnits}}">
+        <view class="picker">
+          {{fromUnits[selectedFromUnit]}}
+          <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 交换按钮 -->
+    <view class="swap-btn" bindtap="swapUnits">
+      <image src="/icons/arrow-down.svg" class="swap-icon"/>
+    </view>
+
+    <!-- 到单位 -->
+    <view class="unit-selector">
+      <picker bindchange="onToUnitChange" value="{{selectedToUnit}}" range="{{toUnits}}">
+        <view class="picker">
+          {{toUnits[selectedToUnit]}}
+          <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 数值输入输出 -->
+  <view class="input-output">
+    <input
+      class="input"
+      type="digit"
+      placeholder="输入数值"
+      value="{{inputValue}}"
+      bindinput="onInputChange"
+    />
+    <text class="equals">=</text>
+    <view class="output">{{resultValue}}</view>
+  </view>
+
+  <!-- 精度设置 -->
+  <view class="precision-setting">
+    <text class="label">小数精度</text>
+    <picker bindchange="onPrecisionChange" value="{{precision}}" range="{{[0,1,2,3,4,5]}}">
+      <view class="picker">
+        {{precision}} 位小数
+        <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 单位说明 -->
+  <view class="unit-info">
+    <text class="info-text">提示: 机械工程单位符合ISO 1000标准，计算机存储单位采用二进制标准(1KB=1024B)</text>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">进给量转换计算</text>
+  </view>
+
+  <view class="input-section">
+    <view class="calculation-type">
+      <radio-group bindchange="bindConversionTypeChange" class="radio-group">
+        <label class="radio-label">
+          <radio value="mmr2mmm" checked/> mm/r → mm/min
+        </label>
+        <label class="radio-label">
+          <radio value="mmm2mmr"/> mm/min → mm/r
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="input-item">
+      <text class="label">{{sourceLabel}}:</text>
+      <input type="digit" bindinput="bindSourceInput" placeholder="输入{{sourcePlaceholder}}" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">主轴转速 (rpm):</text>
+      <input type="digit" bindinput="bindRpmInput" placeholder="输入转速" class="input"/>
+    </view>
+
+    <button bindtap="calculateConversion" class="query-btn">计算转换结果</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">转换结果</text>
+      <view class="result-item">
+        <text class="result-label">{{targetLabel}}:</text>
+        <text class="result-value">{{conversionResult}} {{targetUnit}}</text>
+      </view>
+      <view class="result-formula">
+        <text class="formula-label">计算公式:</text>
+        <text class="formula-content">{{formula}}</text>
+      </view>
+    </view>
+  </view>
+</view>

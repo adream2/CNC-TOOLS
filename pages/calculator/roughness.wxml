@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">表面粗糙度计算</text>
+  </view>
+
+  <view class="input-section">
+    <view class="input-item">
+      <text class="label">加工方法:</text>
+      <picker bindchange="bindMethodChange" value="{{methodIndex}}" range="{{methods}}">
+        <view class="picker">
+          {{methods[methodIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-item">
+      <text class="label">刀具类型:</text>
+      <picker bindchange="bindToolChange" value="{{toolIndex}}" range="{{tools}}">
+        <view class="picker">
+          {{tools[toolIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-item">
+      <text class="label">进给量 (mm/r):</text>
+      <input type="digit" bindinput="bindFeedInput" placeholder="输入进给量" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">刀尖圆弧半径 (mm):</text>
+      <input type="digit" bindinput="bindRadiusInput" placeholder="输入刀尖半径" class="input"/>
+    </view>
+
+    <button bindtap="calculateRoughness" class="query-btn">计算粗糙度</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">粗糙度计算结果</text>
+      <view class="result-item">
+        <text class="result-label">理论粗糙度 Ra:</text>
+        <text class="result-value">{{roughnessRa}} μm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">实际参考 Ra:</text>
+        <text class="result-value">{{actualRa}} μm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">表面光洁度等级:</text>
+        <text class="result-value">{{roughnessGrade}}</text>
+      </view>
+      <view class="result-tip">
+        <text>注: 实际粗糙度受材料硬度、切削速度、刀具磨损等因素影响，以上为理论计算值</text>
+      </view>
+    </view>
+  </view>
+</view>

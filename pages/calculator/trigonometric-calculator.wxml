@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">三角函数计算器</text>
+  </view>
+
+  <view class="section">
+    <text class="label">输入角度</text>
+    <input type="digit" bindinput="inputAngle" placeholder="请输入角度值" class="input"/>
+  </view>
+
+  <view class="section">
+    <text class="label">角度单位</text>
+    <picker bindchange="changeUnit" value="{{unitIndex}}" range="{{units}}">
+      <view class="picker">
+        {{units[unitIndex]}}
+        <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <text class="label">选择函数</text>
+    <picker bindchange="changeFunction" value="{{funcIndex}}" range="{{functions}}">
+      <view class="picker">
+        {{functions[funcIndex]}}
+        <image src="/icons/arrow-down.svg" class="arrow-icon"/>
+      </view>
+    </picker>
+  </view>
+
+  <button bindtap="calculate" class="calculate-btn">计算</button>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <text class="result-label">计算结果：</text>
+    <text class="result-value">{{result}}</text>
+  </view>
+</view>

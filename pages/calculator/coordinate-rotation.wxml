@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">坐标旋转计算</text>
+  </view>
+
+  <view class="illustration-container">
+    <image src="/icons/coordinate-rotation.png" mode="widthFix" class="rotation-image"/>
+  </view>
+
+  <view class="input-section">
+    <view class="section-title">基础圆心位置（可选）</view>
+    <view class="input-group">
+      <view class="input-item">
+        <text class="label">X0:</text>
+        <input type="text" bindinput="bindX0Input" placeholder="默认0" class="input"/>
+      </view>
+      <view class="input-item">
+        <text class="label">Y0:</text>
+        <input type="text" bindinput="bindY0Input" placeholder="默认0" class="input"/>
+      </view>
+    </view>
+
+    <view class="section-title">P1点坐标</view>
+    <view class="input-group">
+      <view class="input-item">
+        <text class="label">X1:</text>
+        <input type="text" bindinput="bindX1Input" placeholder="输入X坐标" class="input"/>
+      </view>
+      <view class="input-item">
+        <text class="label">Y1:</text>
+        <input type="text" bindinput="bindY1Input" placeholder="输入Y坐标" class="input"/>
+      </view>
+    </view>
+
+    <view class="input-item">
+      <text class="label">旋转角度 R (°):</text>
+      <input type="text" bindinput="bindAngleInput" placeholder="输入角度" class="input"/>
+    </view>
+
+    <button bindtap="calculateRotation" class="query-btn">计算P2坐标</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">P2点坐标结果</text>
+      <view class="result-item">
+        <text class="result-label">X2:</text>
+        <text class="result-value">{{x2 !== null ? x2 : ''}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">Y2:</text>
+        <text class="result-value">{{y2 !== null ? y2 : ''}}</text>
+      </view>
+      <view class="result-formula" wx:if="{{formula}}">
+        <text class="formula-label">计算公式:</text>
+        <view class="formula-content">
+          <text wx:for="{{formulaLines}}" wx:key="index">{{item}}
+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

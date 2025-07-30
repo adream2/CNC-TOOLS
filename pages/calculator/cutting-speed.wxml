@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">切削线速度计算</text>
+  </view>
+
+  <view class="input-section">
+    <view class="calculation-type">
+      <radio-group bindchange="bindCalculationTypeChange" class="radio-group">
+        <label class="radio-label">
+          <radio value="speed" checked/> 计算线速度
+        </label>
+        <label class="radio-label">
+          <radio value="rpm"/> 计算转速
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="input-item">
+      <text class="label">刀具/工件直径 (mm):</text>
+      <input type="digit" bindinput="bindDiameterInput" placeholder="输入直径" class="input"/>
+    </view>
+
+    <view class="input-item" wx:if="{{calculationType === 'speed'}}">
+      <text class="label">主轴转速 (rpm):</text>
+      <input type="digit" bindinput="bindRpmInput" placeholder="输入转速" class="input"/>
+    </view>
+
+    <view class="input-item" wx:if="{{calculationType === 'rpm'}}">
+      <text class="label">切削线速度 (m/min):</text>
+      <input type="digit" bindinput="bindSpeedInput" placeholder="输入线速度" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">加工材料:</text>
+      <picker bindchange="bindMaterialChange" value="{{materialIndex}}" range="{{materials}}">
+        <view class="picker">
+          {{materials[materialIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <button bindtap="calculateResult" class="query-btn">计算</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">计算结果</text>
+      <view class="result-item">
+        <text class="result-label">{{resultLabel}}:</text>
+        <text class="result-value">{{resultValue}} {{resultUnit}}</text>
+      </view>
+      <view class="recommendation" wx:if="{{showRecommendation}}">
+        <text class="recommendation-title">推荐切削参数:</text>
+        <text class="recommendation-content">{{recommendationText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

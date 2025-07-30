@@ -1,0 +1,146 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.illustration-container {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0;
+  padding: 15rpx;
+  background: white;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #0066CC;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #666;
+  margin: 15rpx 0;
+  padding-left: 10rpx;
+  border-left: 4rpx solid #007aff;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.input-item {
+  width: 48%;
+  margin-bottom: 20rpx;
+}
+
+.label {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+}
+
+.input {
+  width: 100%;
+  height: 80rpx;
+  border: 2rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.query-btn {
+  width: 100%;
+  height: 90rpx;
+  background: #007aff;
+  color: white;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  margin: 20rpx 0;
+}
+
+.result-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.result-card {
+  padding: 15rpx;
+}
+
+.result-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 15rpx 0;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.result-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.result-value {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #007aff;
+}
+
+.result-formula {
+  margin-top: 20rpx;
+  padding: 15rpx;
+  background-color: #f9f9f9;
+  border-radius: 8rpx;
+}
+
+.formula-label {
+  font-size: 26rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.formula-content {
+  font-size: 24rpx;
+  color: #333;
+  white-space: pre-wrap;
+  margin-top: 5rpx;
+}

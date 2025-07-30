@@ -1,0 +1,137 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin: 20rpx 0 40rpx;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #0066CC;
+}
+
+.input-section {
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 30rpx;
+}
+
+.input-item {
+  display: flex;
+  margin-bottom: 25rpx;
+  align-items: center;
+}
+
+.label {
+  width: 220rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.input {
+  flex: 1;
+  height: 80rpx;
+  border: 2rpx solid #dddddd;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+}
+
+.diagram-image {
+  width: 80%;
+  max-width: 400rpx;
+}
+
+.button-group {
+  display: flex;
+  gap: 20rpx;
+  margin: 20rpx 0 30rpx;
+}
+
+.calculate-btn {
+  flex: 1;
+  height: 90rpx;
+  background-color: #0066CC;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+}
+
+.clear-btn {
+  flex: 1;
+  height: 90rpx;
+  background-color: #f44336;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+}
+
+.copy-btn {
+  width: 100%;
+  height: 80rpx;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0;
+}
+
+.result-section {
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #0066CC;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  display: flex;
+  background-color: #f0f7ff;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 15rpx 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.table-header .table-cell {
+  font-weight: bold;
+  color: #0066CC;
+}

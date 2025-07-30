@@ -1,0 +1,64 @@
+<!-- angle-converter.wxml -->
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">角度转换工具</text>
+  </view>
+
+  <!-- 度分秒转角度 -->
+  <view class="converter-section">
+    <view class="section-title">度分秒转角度</view>
+    <view class="input-group">
+      <input
+        class="input-field"
+        placeholder="度"
+        bindinput="bindDegreesInput"
+        value="{{degrees}}"
+        type="digit"
+      />
+      <text class="unit">°</text>
+      <input
+        class="input-field"
+        placeholder="分"
+        bindinput="bindMinutesInput"
+        value="{{minutes}}"
+        type="digit"
+      />
+      <text class="unit">'</text>
+      <input
+        class="input-field"
+        placeholder="秒"
+        bindinput="bindSecondsInput"
+        value="{{seconds}}"
+        type="digit"
+      />
+      <text class="unit">"</text>
+    </view>
+    <button class="query-btn" bindtap="dmsToDecimal">转换为角度</button>
+    <view class="result">
+      <text class="result-label">结果：</text>
+      <text class="result-value">{{decimalAngle}}°</text>
+    </view>
+  </view>
+
+  <!-- 角度转度分秒 -->
+  <view class="converter-section">
+    <view class="section-title">角度转度分秒</view>
+    <view class="input-group single-input">
+      <input
+        class="input-field"
+        placeholder="输入角度"
+        bindinput="bindAngleInput"
+        value="{{inputAngle}}"
+        type="digit"
+      />
+      <text class="unit">°</text>
+    </view>
+    <button class="query-btn" bindtap="decimalToDms">转换为度分秒</button>
+    <view class="result">
+      <text class="result-label">结果：</text>
+      <text class="result-value">
+        {{convertedDegrees}}°{{convertedMinutes}}'{{convertedSeconds}}"
+      </text>
+    </view>
+  </view>
+</view>

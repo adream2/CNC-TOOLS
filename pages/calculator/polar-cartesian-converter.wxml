@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="page-header">
+    <text class="title">极坐标与直角坐标转换</text>
+  </view>
+
+  <!-- 极坐标输入区域 -->
+  <view class="input-section">
+    <view class="section-title">极坐标 (R, θ)</view>
+    <view class="input-row">
+      <view class="input-item">
+        <text class="label">半径 R:</text>
+        <input type="text" bindinput="bindRadiusInput" placeholder="输入半径值" value="{{radius}}" />
+      </view>
+      <view class="input-item">
+        <text class="label">角度 θ:</text>
+        <input type="text" bindinput="bindAngleInput" placeholder="输入角度值" value="{{angle}}" />
+        <button class="unit-btn" bindtap="switchAngleUnit">
+          {{angleUnit === 'degree' ? '°' : 'rad'}}
+        </button>
+      </view>
+    </view>
+    <button class="convert-btn" bindtap="polarToCartesian">
+      极坐标 → 直角坐标
+    </button>
+  </view>
+
+  <!-- 直角坐标输入区域 -->
+  <view class="input-section">
+    <view class="section-title">直角坐标 (X, Y)</view>
+    <view class="input-row">
+      <view class="input-item">
+        <text class="label">X坐标:</text>
+        <input type="text" bindinput="bindXInput" placeholder="输入X值" value="{{x}}" />
+      </view>
+      <view class="input-item">
+        <text class="label">Y坐标:</text>
+        <input type="text" bindinput="bindYInput" placeholder="输入Y值" value="{{y}}" />
+      </view>
+    </view>
+    <button class="convert-btn" bindtap="cartesianToPolar">
+      直角坐标 → 极坐标
+    </button>
+  </view>
+
+  <!-- 结果显示区域 -->
+  <view class="result-section">
+    <text class="result-label">转换结果:</text>
+    <text class="result-text">{{cartesianResult || polarResult || '请输入数值并点击转换按钮'}}</text>
+  </view>
+
+  <!-- 坐标示意图 -->
+  <view class="diagram-container">
+    <image src="/icons/polar-cartesian-converter.svg" mode="widthFix" class="diagram-image" />
+  </view>
+</view>

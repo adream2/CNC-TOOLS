@@ -1,0 +1,675 @@
+/* 页面容器 */
+.container {
+  background-color: #f5f6f7;
+  min-height: 100vh;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: #fff;
+}
+
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid #f3f3f3;
+  border-top: 6rpx solid #1890ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #888;
+}
+
+/* 错误容器 */
+.error-container {
+  background-color: #fff;
+  padding: 60rpx 40rpx;
+  text-align: center;
+  margin: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.error-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 文章容器 */
+.post-container {
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* 文章头部 */
+.post-header {
+  padding: 40rpx 30rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.post-title {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #3f3f3f;
+  line-height: 1.4;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+/* 文章元信息 */
+.post-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  font-size: 24rpx;
+  color: #888;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.meta-label {
+  margin-right: 8rpx;
+  color: #666;
+}
+
+.meta-value {
+  color: #3f3f3f;
+}
+
+.category {
+  color: #009874;
+  font-weight: 500;
+}
+
+.date {
+  color: #1890ff;
+}
+
+.views {
+  color: #fa8c16;
+}
+
+/* 文章内容容器 */
+.post-content-container {
+  padding: 30rpx;
+}
+
+/* 文章内容样式 */
+.post-content {
+  font-family: -apple-system-font, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 32rpx;
+  line-height: 1.75;
+  color: #3f3f3f;
+  letter-spacing: 0.1em;
+}
+
+/* 标题样式 */
+.post-content .rich-text-node h1 {
+  font-size: 38rpx;
+  margin: 60rpx 0 30rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+  text-align: center;
+  display: table;
+  padding: 0 20rpx;
+  border-bottom: 4rpx solid #009874;
+}
+
+.post-content .rich-text-node h2 {
+  font-size: 36rpx;
+  margin: 50rpx 0 30rpx;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: table;
+  padding: 0 10rpx;
+  background: #009874;
+  border-radius: 4rpx;
+}
+
+.post-content .rich-text-node h3 {
+  font-size: 34rpx;
+  margin: 40rpx 0 25rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+  padding-left: 16rpx;
+  border-left: 6rpx solid #009874;
+}
+
+.post-content .rich-text-node h4 {
+  font-size: 32rpx;
+  margin: 35rpx 0 20rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+  padding-left: 14rpx;
+  border-left: 4rpx solid #009874;
+}
+
+.post-content .rich-text-node h5,
+.post-content .rich-text-node h6 {
+  font-size: 30rpx;
+  margin: 30rpx 0 15rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+}
+
+/* 段落样式 */
+.post-content .rich-text-node p {
+  margin: 30rpx 16rpx;
+  line-height: 1.75;
+}
+
+/* 列表样式 */
+.post-content .rich-text-node ul,
+.post-content .rich-text-node ol {
+  margin: 30rpx 16rpx;
+  padding-left: 40rpx;
+}
+
+.post-content .rich-text-node li {
+  margin: 16rpx 0;
+  line-height: 1.75;
+}
+
+.post-content .rich-text-node ul li {
+  list-style-type: disc;
+}
+
+.post-content .rich-text-node ol li {
+  list-style-type: decimal;
+}
+
+/* 引用样式 */
+.post-content .rich-text-node blockquote {
+  margin: 30rpx 16rpx;
+  padding: 20rpx 30rpx;
+  border-left: 8rpx solid #009874;
+  border-radius: 12rpx;
+  background-color: #f7f7f7;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: normal;
+}
+
+.post-content .rich-text-node blockquote p {
+  margin: 0;
+  line-height: 1.75;
+  letter-spacing: 0.1em;
+}
+
+/* 代码块样式 */
+.post-content .rich-text-node pre {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 0;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 20rpx 0;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.15);
+  border: 1rpx solid #333;
+  line-height: 1.6;
+  position: relative;
+}
+
+.post-content .rich-text-node pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-family: inherit;
+  white-space: pre;
+  margin: 0;
+  border: none;
+  display: block;
+}
+
+/* 代码块标题栏 */
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  background-color: #2d2d2d;
+  border-top-left-radius: 6rpx;
+  border-top-right-radius: 6rpx;
+  border-bottom: 1rpx solid #333;
+}
+
+.code-block-header .language-tag {
+  font-size: 22rpx;
+  color: #858585;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  background-color: #3c3c3c;
+}
+
+/* 带行号的代码块样式 */
+.code-block-wrapper {
+  position: relative;
+  margin: 20rpx 0;
+  overflow-x: auto;
+  background-color: #1e1e1e;
+  border-radius: 6rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.15);
+  border: 1rpx solid #333;
+}
+
+.code-block-wrapper::-webkit-scrollbar {
+  height: 8rpx;
+  background-color: transparent;
+}
+
+.code-block-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+  border-radius: 4rpx;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: pre;
+  overflow-x: auto;
+  display: block;
+}
+
+.code-line {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20rpx;
+  line-height: 1.6;
+  background-color: #1e1e1e;
+  white-space: pre;
+  min-width: max-content;
+  transition: background-color 0.2s ease;
+}
+
+.code-line:hover {
+  background-color: #252525;
+}
+
+.code-line:first-child {
+  padding-top: 0;
+}
+
+.code-line:last-child {
+  padding-bottom: 0;
+}
+
+.line-number {
+  color: #6b6b6b;
+  text-align: right;
+  min-width: 40rpx;
+  margin-right: 15rpx;
+  user-select: none;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 26rpx;
+  padding-top: 2rpx;
+}
+
+.line-content {
+  flex: 1;
+  color: #dcdcdc;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: pre;
+  font-size: 26rpx;
+  padding-top: 2rpx;
+}
+
+/* 内联代码样式 */
+.post-content .rich-text-node code {
+  background-color: #f0f0f0;
+  color: #d73a49;
+  padding: 2rpx 6rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+  margin: 0 4rpx;
+  border: 1rpx solid #e0e0e0;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.post-content .rich-text-node code.inline-code {
+  background-color: #f0f0f0;
+  color: #d73a49;
+  padding: 2rpx 6rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+  margin: 0 4rpx;
+  border: 1rpx solid #e0e0e0;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.post-content .rich-text-node code.inline-code:hover {
+  background-color: #e0e0e0;
+  border-color: #d0d0d0;
+}
+
+/* 代码块提示 */
+.code-block-tip {
+  background-color: #e6f7ff;
+  border: 1rpx solid #91d5ff;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin: 0 30rpx 30rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #1890ff;
+}
+
+.tip-icon {
+  margin-right: 10rpx;
+  font-size: 28rpx;
+}
+
+/* 链接样式 */
+.post-content .rich-text-node a {
+  color: #576b95;
+  text-decoration: none;
+}
+
+.post-content .rich-text-node a:hover {
+  text-decoration: underline;
+}
+
+/* 表格样式 */
+.post-content .rich-text-node table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30rpx 16rpx;
+  font-size: 28rpx;
+}
+
+.post-content .rich-text-node table th,
+.post-content .rich-text-node table td {
+  padding: 16rpx;
+  border: 1rpx solid #dfdfdf;
+  text-align: left;
+  word-break: keep-all;
+  color: #3f3f3f;
+}
+
+.post-content .rich-text-node table th {
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  color: #3f3f3f;
+}
+
+.post-content .rich-text-node table a {
+  color: #576b95;
+}
+
+.post-content .rich-text-node table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* 图片样式 */
+.post-content .rich-text-node img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12rpx;
+  margin: 20rpx auto;
+  display: block;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.post-content .rich-text-node figure {
+  margin: 30rpx 16rpx;
+}
+
+.post-content .rich-text-node figcaption {
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 16rpx;
+}
+
+/* 分割线样式 */
+.post-content .rich-text-node hr {
+  border-style: solid;
+  border-width: 2rpx 0 0;
+  border-color: rgba(0, 0, 0, 0.1);
+  transform-origin: 0 0;
+  transform: scale(1, 0.5);
+  height: 0.4em;
+  margin: 30rpx 0;
+}
+
+/* 粗体样式 */
+.post-content .rich-text-node strong {
+  color: #009874;
+  font-weight: bold;
+}
+
+/* 斜体样式 */
+.post-content .rich-text-node em {
+  font-style: italic;
+}
+
+/* 删除线样式 */
+.post-content .rich-text-node del {
+  color: #009874;
+}
+
+/* 评论区域 */
+.comments-section {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.section-header {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 评论输入区域 - 仿微信公众号样式 */
+.comment-form {
+  background-color: #fff;
+  padding: 0 30rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0 20rpx;
+}
+
+.form-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.cancel-reply {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 用户信息提示 - 还原原来的样式 */
+.user-info-prompt {
+  background-color: #fffbe6;
+  border: 1rpx solid #ffe58f;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-text {
+  font-size: 24rpx;
+  color: #d48806;
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.get-userinfo-btn {
+  background-color: #fff;
+  border: 1rpx solid #ffc53d;
+  color: #d48806;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 4rpx;
+  white-space: nowrap;
+}
+
+.get-userinfo-btn::after {
+  border: none;
+}
+
+.comment-input {
+  width: 100%;
+  height: 160rpx;
+  padding: 20rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  resize: none;
+  background-color: #f8f8f8;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #1890ff;
+  background-color: #fff;
+}
+
+.submit-button {
+  background-color: #07c160;
+  color: #fff;
+  border: none;
+  border-radius: 6rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  width: 100%;
+}
+
+/* 评论列表 */
+.comments-list {
+  padding: 0 30rpx;
+}
+
+.comment-item {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.child-comment {
+  margin-left: 60rpx;
+  margin-top: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 20rpx;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+  font-size: 24rpx;
+}
+
+.comment-floor {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.comment-author {
+  color: #333;
+  font-weight: 500;
+}
+
+.comment-date {
+  color: #999;
+}
+
+.comment-content {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15rpx;
+  word-wrap: break-word;
+}
+
+.comment-content .rich-text-node {
+  display: inline;
+}
+
+.comment-actions {
+  text-align: right;
+}
+
+.reply-button {
+  font-size: 24rpx;
+  color: #1890ff;
+  padding: 10rpx 20rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #1890ff;
+  margin-left: 10rpx;
+}
+
+.toggle-button {
+  font-size: 24rpx;
+  color: #999;
+  padding: 10rpx 20rpx;
+  margin-left: 10rpx;
+}
+
+.no-comments {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}

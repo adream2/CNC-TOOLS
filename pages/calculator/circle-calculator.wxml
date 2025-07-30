@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="page-header">
+  <text class="page-title">三点圆心计算器</text>
+</view>
+<view class="section">
+    
+    <view class="input-group">
+      <text class="label">P1坐标:</text>
+      <view class="coordinate-inputs">
+        <input type="text" placeholder="x1" bindinput="bindP1XInput" class="input" />
+        <text class="separator">,</text>
+        <input type="text" placeholder="y1" bindinput="bindP1YInput" class="input" />
+      </view>
+    </view>
+    
+    <view class="input-group">
+      <text class="label">P2坐标:</text>
+      <view class="coordinate-inputs">
+        <input type="text" placeholder="x2" bindinput="bindP2XInput" class="input" />
+        <text class="separator">,</text>
+        <input type="text" placeholder="y2" bindinput="bindP2YInput" class="input" />
+      </view>
+    </view>
+    
+    <view class="input-group">
+      <text class="label">P3坐标:</text>
+      <view class="coordinate-inputs">
+        <input type="text" placeholder="x3" bindinput="bindP3XInput" class="input" />
+        <text class="separator">,</text>
+        <input type="text" placeholder="y3" bindinput="bindP3YInput" class="input" />
+      </view>
+    </view>
+    
+    <button class="calculate-btn" bindtap="calculateCircle">计算圆心和半径</button>
+    
+    <view class="result-group" wx:if="{{centerX || centerY || radius}}">
+      <view class="result-item">
+        <text class="result-label">圆心坐标X:</text>
+        <text class="result-value">{{centerX}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">圆心坐标Y:</text>
+        <text class="result-value">{{centerY}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">圆心半径R:</text>
+        <text class="result-value">{{radius}} 单位</text>
+      </view>
+    </view>
+  </view>
+</view>

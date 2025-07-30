@@ -1,0 +1,70 @@
+<!-- 顶部分类筛选 -->
+<view class="category-container">
+  <scroll-view class="category-scroll" scroll-x="true">
+    <view class="category-list">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="id"
+        class="category-item {{currentCategory === item.id ? 'active' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="onCategoryTap"
+      >
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 文章列表 -->
+<view class="posts-container">
+  <scroll-view scroll-y="true" class="posts-scroll">
+    <view 
+      wx:for="{{posts}}" 
+      wx:key="id"
+      class="post-item"
+      data-id="{{item.id}}"
+      bindtap="onPostTap"
+    >
+      <view class="post-content">
+        <!-- 缩略图 -->
+        <image 
+          class="post-thumb" 
+          src="{{item.thumbnail || './images/Default thumbnail.jpg'}}" 
+          mode="aspectFill"
+        ></image>
+        
+        <view class="post-info">
+          <!-- 标题 -->
+          <view class="post-title">{{item.title}}</view>
+          
+          <!-- 元信息第一行：分类和阅读量 -->
+          <view class="post-meta-row">
+            <text class="meta-item post-category">{{item.category_name}}</text>
+            <text class="meta-item">阅读: {{item.view_count || 0}}</text>
+          </view>
+          
+          <!-- 元信息第二行：日期和评论数 -->
+          <view class="post-meta-row">
+            <text class="meta-item">{{item.date}}</text>
+            <text class="meta-item">评论: {{item.comment_count || 0}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 加载更多提示 -->
+    <view wx:if="{{loading && posts.length === 0}}" class="loading-more">
+      <text>加载中...</text>
+    </view>
+    
+    <!-- 没有更多数据提示 -->
+    <view wx:elif="{{!hasMore && posts.length > 0}}" class="no-more-data">
+      <text>没有更多数据了</text>
+    </view>
+    
+    <!-- 无数据提示 -->
+    <view wx:elif="{{posts.length === 0 && !loading}}" class="no-data">
+      <text>暂无数据</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,202 @@
+/* triangle-calculator.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #0066CC;
+}
+
+.calculation-type {
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.radio-label radio {
+  margin-right: 15rpx;
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+}
+
+.diagram {
+  width: 100%;
+  max-width: 600rpx;
+  height: auto;
+  border-radius: 12rpx;
+}
+
+.input-area {
+  margin-top: 30rpx;
+  background-color: #ffffff;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12rpx 0;
+}
+
+.input-item text {
+  width: 180rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.input-item input {
+  flex: 1;
+  min-width: 220rpx;
+  height: 80rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 32rpx;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.input-item input:focus {
+  border-color: #07c160;
+  box-shadow: 0 0 12rpx rgba(7, 193, 96, 0.3);
+  background-color: #fff;
+}
+
+.unit {
+  margin-left: 10rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.hint {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  gap: 20rpx;
+}
+
+.calculate-btn {
+  flex: 1;
+  background-color: #07c160;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  transition: all 0.2s ease;
+}
+
+.calculate-btn:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+.reset-btn {
+  flex: 1;
+  background-color: #f44336;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+button[disabled] {
+  opacity: 0.6;
+}
+
+/* 加载动画 */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+}
+
+.loading-dot {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #07c160;
+  margin: 0 15rpx;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+}
+
+/* 响应式布局 */
+@media (max-width: 600rpx) {
+  .input-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .input-item text {
+    width: 100%;
+    margin-bottom: 12rpx;
+  }
+  
+  .input-item input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="page-header">
+  <text class="page-title">两点距离计算器</text>
+</view>
+<view class="section">
+    
+    <view class="input-group">
+      <text class="label">P1坐标:</text>
+      <view class="coordinate-inputs">
+        <input type="text" placeholder="x1" bindinput="bindP1XInput" class="input" />
+        <text class="separator">,</text>
+        <input type="text" placeholder="y1" bindinput="bindP1YInput" class="input" />
+      </view>
+    </view>
+    
+    <view class="input-group">
+      <text class="label">P2坐标:</text>
+      <view class="coordinate-inputs">
+        <input type="text" placeholder="x2" bindinput="bindP2XInput" class="input" />
+        <text class="separator">,</text>
+        <input type="text" placeholder="y2" bindinput="bindP2YInput" class="input" />
+      </view>
+    </view>
+    
+    <button class="calculate-btn" bindtap="calculateDistance">计算距离</button>
+    
+    <view class="result" wx:if="{{distance}}">
+      <text class="result-label">两点距离:</text>
+      <text class="result-value">{{distance}} </text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">锥度计算</text>
+  </view>
+
+  <view class="input-section">
+    <view class="input-item">
+      <text class="label">大端直径 D (mm):</text>
+      <input type="digit" bindinput="bindLargeDiameterInput" placeholder="已知时输入，未知可留空" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">小端直径 d (mm):</text>
+      <input type="digit" bindinput="bindSmallDiameterInput" placeholder="已知时输入，未知可留空" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">锥长 L (mm):</text>
+      <input type="digit" bindinput="bindLengthInput" placeholder="已知时输入，未知可留空" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">锥度比 (1:):</text>
+      <input type="digit" bindinput="bindManualTaperRatioInput" placeholder="已知时输入，未知可留空(如20表示1:20)" class="input"/>
+    </view>
+    <view class="mode-hint">提示：输入任意三个参数即可计算第四个参数</view>
+<button bindtap="calculateTaper" class="query-btn">计算</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">计算结果</text>
+      <view class="result-item">
+        <text class="result-label">锥度比:</text>
+        <text class="result-value">{{taperRatio}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">锥度值 (2α):</text>
+        <text class="result-value">{{taperAngle}}°</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">{{resultLabel}}:</text>
+        <text class="result-value">{{resultValue}} mm</text>
+      </view>
+      <view class="common-tapers">
+        <text class="common-tapers-title">常用标准锥度:</text>
+        <view class="common-tapers-list">
+          <text class="taper-item">莫氏锥度: 1:19.212~1:20.047</text>
+          <text class="taper-item">公制锥度: 1:20</text>
+          <text class="taper-item">BT锥度: 1:10</text>
+          <text class="taper-item">主轴锥度: 7:24</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

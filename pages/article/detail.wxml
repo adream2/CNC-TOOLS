@@ -1,0 +1,132 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading-container">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 错误状态 -->
+  <view wx:elif="{{error}}" class="error-container">
+    <view class="error-icon">⚠️</view>
+    <view class="error-message">
+      <text>{{errorMsg}}</text>
+    </view>
+    <button class="reload-button" bindtap="reloadPost">重新加载</button>
+  </view>
+  
+  <!-- 正常显示文章 -->
+  <view wx:else class="post-container">
+    <!-- 文章头部 -->
+    <view class="post-header">
+      <view class="post-title">{{post.title}}</view>
+      
+      <!-- 文章元信息 -->
+      <view class="post-meta">
+        <view class="meta-item">
+          <text class="meta-label">分类:</text>
+          <text class="meta-value category">{{post.category_name}}</text>
+        </view>
+        <view class="meta-item">
+          <text class="meta-label">时间:</text>
+          <text class="meta-value date">{{post.date}}</text>
+        </view>
+        <view class="meta-item">
+          <text class="meta-label">浏览:</text>
+          <text class="meta-value views">{{post.view_count || 0}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 文章内容 -->
+    <view class="post-content-container">
+      <rich-text 
+        nodes="{{post.content}}" 
+        bindtap="handleContentTap"
+        class="post-content"
+      ></rich-text>
+    </view>
+    
+    <!-- 评论区域 -->
+    <view class="comments-section">
+      <view class="section-header">
+        <text class="section-title">评论 ({{post.comment_count || 0}})</text>
+      </view>
+      
+      <!-- 发表评论 -->
+      <view class="comment-form">
+        <view class="form-header">
+          <text class="form-title">{{replyToComment ? '回复评论' : '发表评论'}}</text>
+          <text wx:if="{{replyToComment}}" class="cancel-reply" bindtap="cancelReply">取消回复</text>
+        </view>
+        
+        <!-- 用户信息提示 -->
+        <view wx:if="{{userInfo.nickName === '匿名用户'}}" class="user-info-prompt">
+          <text class="prompt-text">当前使用匿名评论，获取微信昵称可显示真实身份</text>
+          <button class="get-userinfo-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取微信昵称</button>
+        </view>
+        
+        <textarea 
+          class="comment-input" 
+          placeholder="{{replyToComment ? '请输入回复内容...' : '请输入您的评论...'}}" 
+          value="{{commentContent}}"
+          bindinput="onCommentInput"
+          maxlength="500"
+        ></textarea>
+        <button class="submit-button" bindtap="submitComment">
+          {{replyToComment ? '提交回复' : '提交评论'}}
+        </button>
+      </view>
+      
+      <!-- 评论列表 -->
+      <view class="comments-list">
+        <block wx:for="{{comments}}" wx:key="id">
+          <!-- 根评论 -->
+          <view class="comment-item">
+            <view class="comment-header">
+              <text class="comment-floor">#{{item.floor}}</text>
+              <text class="comment-author">{{item.author_name}}</text>
+              <text class="comment-date">{{item.date}}</text>
+            </view>
+            <view class="comment-content">
+              <rich-text nodes="{{item.content}}"></rich-text>
+            </view>
+            <view class="comment-actions">
+              <text class="reply-button" data-id="{{item.id}}" data-author="{{item.author_name}}" bindtap="startReply">回复</text>
+              <!-- 如果有子评论，显示展开/折叠按钮 -->
+              <text wx:if="{{item.children && item.children.length > 0}}" 
+                    class="toggle-button" 
+                    data-id="{{item.id}}" 
+                    bindtap="toggleComment">
+                {{expandedComments[item.id] ? '收起' : '展开'}}{{item.children.length}}条回复
+              </text>
+            </view>
+          </view>
+          
+          <!-- 子评论（默认折叠，点击展开） -->
+          <view class="children-comments" wx:if="{{item.children && item.children.length > 0 && expandedComments[item.id]}}">
+            <block wx:for="{{item.children}}" wx:for-item="child" wx:key="id">
+              <view class="comment-item child-comment">
+                <view class="comment-header">
+                  <text class="comment-floor">#{{item.floor}}-{{child.floor}}</text>
+                  <text class="comment-author">{{child.author_name}}</text>
+                  <text class="comment-date">{{child.date}}</text>
+                </view>
+                <view class="comment-content">
+                  <rich-text nodes="{{child.content}}"></rich-text>
+                </view>
+                <view class="comment-actions">
+                  <text class="reply-button" data-id="{{child.id}}" data-author="{{child.author_name}}" bindtap="startReply">回复</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        
+        <!-- 无评论提示 -->
+        <view wx:if="{{comments.length === 0}}" class="no-comments">
+          <text>暂无评论，快来抢沙发吧！</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

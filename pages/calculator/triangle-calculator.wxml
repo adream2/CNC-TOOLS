@@ -1,0 +1,130 @@
+<!-- 三角形计算器界面 - 严格遵循边角关系 -->
+<view class="container">
+  <!-- 标题 -->
+  <view class="page-header">
+    <text class="page-title">三角形计算器</text>
+  </view>
+
+  <!-- 三角形类型选择器 -->
+  <view class="calculation-type">
+    <radio-group bindchange="bindTriangleTypeChange" class="radio-group">
+      <label class="radio-label">
+        <radio value="right" checked="{{triangleType === 'right'}}"/> 直角三角形
+      </label>
+      <label class="radio-label">
+        <radio value="isosceles" checked="{{triangleType === 'isosceles'}}"/> 等腰三角形
+      </label>
+      <label class="radio-label">
+        <radio value="general" checked="{{triangleType === 'general'}}"/> 一般三角形
+      </label>
+    </radio-group>
+  </view>
+
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <!-- 直角三角形输入 -->
+    <view wx:if="{{triangleType === 'right'}}" class="input-group">
+      <view class="input-item">
+        <text>对边 a:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.a}}" bindinput="bindInputChange" data-name="a"></input>
+      </view>
+      <view class="input-item">
+        <text>对边 b:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.b}}" bindinput="bindInputChange" data-name="b"></input>
+      </view>
+      <view class="input-item">
+        <text>斜边 c:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.c}}" bindinput="bindInputChange" data-name="c"></input>
+      </view>
+      <view class="input-item">
+        <text>角度 A:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleA}}" bindinput="bindInputChange" data-name="angleA"></input>
+        <text class="unit">°</text>
+      </view>
+      <view class="input-item">
+        <text>角度 B:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleB}}" bindinput="bindInputChange" data-name="angleB"></input>
+        <text class="unit">°</text>
+      </view>
+    </view>
+
+    <!-- 等腰三角形输入 - 订正版 -->
+    <view wx:elif="{{triangleType === 'isosceles'}}" class="input-group">
+      <view class="input-item">
+        <text>底边 a:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.a}}" bindinput="bindInputChange" data-name="a"></input>
+      </view>
+      <view class="input-item">
+        <text>腰长 b:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.b}}" bindinput="bindInputChange" data-name="b"></input>
+      </view>
+      <view class="input-item">
+        <text>腰长 c:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.c}}" bindinput="bindInputChange" data-name="c"></input>
+        <text class="hint">(自动等于b)</text>
+      </view>
+      <view class="input-item">
+        <text>顶角 A:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleA}}" bindinput="bindInputChange" data-name="angleA"></input>
+        <text class="unit">°</text>
+      </view>
+      <view class="input-item">
+        <text>底角 B:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleB}}" bindinput="bindInputChange" data-name="angleB"></input>
+        <text class="unit">°</text>
+        <text class="hint">(等于角C)</text>
+      </view>
+    </view>
+
+    <!-- 一般三角形输入 -->
+    <view wx:else class="input-group">
+      <view class="input-item">
+        <text>边 a:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.a}}" bindinput="bindInputChange" data-name="a"></input>
+      </view>
+      <view class="input-item">
+        <text>边 b:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.b}}" bindinput="bindInputChange" data-name="b"></input>
+      </view>
+      <view class="input-item">
+        <text>边 c:</text>
+        <input type="digit" placeholder="输入长度" value="{{inputs.c}}" bindinput="bindInputChange" data-name="c"></input>
+      </view>
+      <view class="input-item">
+        <text>角度 A:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleA}}" bindinput="bindInputChange" data-name="angleA"></input>
+        <text class="unit">°</text>
+      </view>
+      <view class="input-item">
+        <text>角度 B:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleB}}" bindinput="bindInputChange" data-name="angleB"></input>
+        <text class="unit">°</text>
+      </view>
+      <view class="input-item">
+        <text>角度 C:</text>
+        <input type="digit" placeholder="输入角度" value="{{inputs.angleC}}" bindinput="bindInputChange" data-name="angleC"></input>
+        <text class="unit">°</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="button-group">
+    <button class="reset-btn" bindtap="resetInputs">清空</button>
+    <button class="calculate-btn" bindtap="calculateTriangle">计算</button>
+  </view>
+
+  <!-- 加载指示器 -->
+  <view class="loading-indicator" wx:if="{{calculating}}">
+    <view class="loading-dot"></view>
+    <view class="loading-dot"></view>
+    <view class="loading-dot"></view>
+  </view>
+
+  <!-- 三角形示意图 -->
+  <view class="diagram-container">
+    <image wx:if="{{triangleType === 'right'}}" src="../../icons/right-triangle.svg" mode="widthFix" class="diagram"></image>
+    <image wx:elif="{{triangleType === 'isosceles'}}" src="../../icons/isosceles-triangle.svg" mode="widthFix" class="diagram"></image>
+    <image wx:else src="../../icons/general-triangle.svg" mode="widthFix" class="diagram"></image>
+  </view>
+</view>
