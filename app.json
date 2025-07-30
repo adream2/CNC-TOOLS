@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/thread/metric",
+    "pages/thread/g-thread",
+    "pages/thread/cone-thread",
+    "pages/thread/unified-thread",
+    "pages/thread/unified-taper-thread",
+    "pages/code/index",
+    "pages/code/mill/index",
+    "pages/code/mill/gcode/index",
+    "pages/code/mill/mcode/index",
+    "pages/code/mill/macro/index",
+    "pages/code/mill/variable/index",
+    "pages/code/lathe/index",
+    "pages/code/lathe/gcode/index",
+    "pages/code/lathe/mcode/index",
+    "pages/code/lathe/macro/index",
+    "pages/code/lathe/variable/index",
+    "pages/tolerance/hole-shaft",
+    "pages/tolerance/free",
+    "pages/tolerance/aviation",
+    "pages/calculator/roughness",
+    "pages/calculator/angle-converter",
+    "pages/calculator/distance-calculator",
+    "pages/calculator/circle-calculator",
+    "pages/calculator/cutting-speed",
+    "pages/calculator/taper",
+    "pages/calculator/feed-conversion",
+    "pages/calculator/coordinate-rotation",
+    "pages/calculator/trigonometric-calculator",
+    "pages/calculator/circle-points-calculator",
+    "pages/calculator/polar-cartesian-converter",
+    "pages/calculator/triangle-calculator",
+    "pages/calculator/unit-converter",
+    "pages/about/index",
+    "pages/article/index",
+    "pages/article/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0066CC",
+    "navigationBarTitleText": "数控（CNC）工具集",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+        "color": "#666666",
+        "selectedColor": "#0066CC",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "icons/home-default.png",
+                "selectedIconPath": "icons/home-selected.png"
+            },
+            {
+                "pagePath": "pages/article/index",
+                "text": "文章",
+                "iconPath": "icons/article-icon.png",
+                "selectedIconPath": "icons/article-icon.png"
+            },
+            {
+                "pagePath": "pages/about/index",
+                "text": "关于",
+                "iconPath": "icons/about-default.png",
+                "selectedIconPath": "icons/about-selected.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+  }

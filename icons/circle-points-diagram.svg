@@ -1,0 +1,37 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <!-- 背景和坐标系 -->
+  <rect width="100%" height="100%" fill="#f9f9f9"/>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="50" x2="200" y2="350" stroke="#333" stroke-width="2"/>
+  <text x="360" y="205" font-size="12" fill="#333">X</text>
+  <text x="205" y="45" font-size="12" fill="#333">Y</text>
+  <text x="190" y="215" font-size="10" fill="#666">O</text>
+
+  <!-- 基圆 -->
+  <circle cx="200" cy="200" r="100" stroke="#0066CC" stroke-width="2" fill="none"/>
+
+  <!-- 圆周均布点 -->
+  <circle cx="300" cy="200" r="6" fill="#FF6600"/>
+  <text x="310" y="200" font-size="14" font-weight="bold" fill="#333">P1</text>
+  <circle cx="250" cy="113.4" r="6" fill="#FF6600"/>
+  <text x="260" y="113.4" font-size="14" font-weight="bold" fill="#333">P2</text>
+  <circle cx="150" cy="113.4" r="6" fill="#FF6600"/>
+  <text x="120" y="113.4" font-size="14" font-weight="bold" fill="#333">P3</text>
+  <circle cx="100" cy="200" r="6" fill="#FF6600"/>
+  <circle cx="150" cy="286.6" r="6" fill="#FF6600"/>
+  <circle cx="250" cy="286.6" r="6" fill="#FF6600"/>
+
+  <!-- 起始角度标记 -->
+  <line x1="200" y1="200" x2="300" y2="200" stroke="#0066CC" stroke-width="2"/>
+  <path d="M220,200 A50,50 0 0,1 250,170" fill="none" stroke="#0066CC" stroke-width="1"/>
+  <path d="M300,200 A100,100 0 0,0 250,113.4" fill="none" stroke="#FF6600" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="240" y="185" font-size="12" fill="#0066CC">起始角度</text>
+
+  <!-- 半径标签 -->
+  <text x="250" y="195" font-size="14" fill="#0066CC" font-weight="bold">R</text>
+</svg>

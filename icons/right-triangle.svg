@@ -1,0 +1,19 @@
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+            <!-- 直角三角形（角C为直角） -->
+            <polygon points="50,150 50,50 200,150" fill="none" stroke="black" stroke-width="2"/>
+            <!-- 标记顶点 -->
+            <circle cx="50" cy="50" r="5" fill="red"/>
+            <circle cx="200" cy="150" r="5" fill="red"/>
+            <circle cx="50" cy="150" r="5" fill="red"/>
+            <!-- 标记角度 -->
+            <text x="40" y="40" font-size="14">A</text>
+            <text x="210" y="160" font-size="14">B</text>
+            <text x="40" y="160" font-size="14">C</text>
+            <!-- 标记边 -->
+            <text x="125" y="170" font-size="14">a</text>
+            <text x="30" y="100" font-size="14">b</text>
+            <text x="125" y="90" font-size="14">c</text>
+            <!-- 直角标记 -->
+            <rect x="45" y="145" width="10" height="10" fill="white" stroke="black"/>
+        </svg>
+    

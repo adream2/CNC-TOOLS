@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+            <!-- 等腰三角形 AB=AC -->
+            <polygon points="70,150 230,150 150,50" fill="none" stroke="black" stroke-width="2"/>
+            <!-- 标记顶点 -->
+            <circle cx="70" cy="150" r="5" fill="red"/>
+            <circle cx="230" cy="150" r="5" fill="red"/>
+            <circle cx="150" cy="50" r="5" fill="red"/>
+            <!-- 标记角度 -->
+            <text x="60" y="160" font-size="14">B</text>
+            <text x="240" y="160" font-size="14">C</text>
+            <text x="150" y="40" font-size="14">A</text>
+            <!-- 标记边 -->
+            <text x="150" y="170" font-size="14">a</text>
+            <text x="100" y="100" font-size="14">c</text>
+            <text x="200" y="100" font-size="14">b</text>
+        </svg>
+    
