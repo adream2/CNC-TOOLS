@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">常用代码查询</text>
+  </view>
+
+  <view class="grid-container">
+    <navigator url="/pages/code/mill/index" class="grid-item">
+      <view class="icon">🔩</view>
+      <view class="text">铣床代码</view>
+    </navigator>
+    <navigator url="/pages/code/lathe/index" class="grid-item">
+      <view class="icon">🔧</view>
+      <view class="text">车床代码</view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="header">
+    <text class="title">车床宏变量查询</text>
+    <picker bindchange="bindSystemChange" value="{{systemIndex}}" range="{{systems}}">
+      <view class="picker">
+        当前系统: {{systems[systemIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <scroll-view class="code-list" scroll-y>
+    <view class="code-item" wx:for="{{variables}}" wx:key="id">
+      <view class="code-name">{{item.variable}}</view>
+      <view class="code-desc">{{item.description}}</view>
+    </view>
+  </scroll-view>
+</view>

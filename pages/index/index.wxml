@@ -1,0 +1,106 @@
+<view class="container">
+  <view class="header">
+    <text class="title">数控（CNC）工具集</text>
+    <text class="subtitle">高效查询与计算工具</text>
+  </view>
+
+  <view class="grid-container">
+    <!-- 公差查询 -->
+    <navigator url="/pages/tolerance/hole-shaft" class="grid-item">
+      <view class="icon">📏</view>
+      <view class="text">孔轴公差</view>
+    </navigator>
+    <navigator url="/pages/tolerance/free" class="grid-item">
+      <view class="icon">📐</view>
+      <view class="text">自由公差</view>
+    </navigator>
+    <navigator url="/pages/tolerance/aviation" class="grid-item">
+      <view class="icon">✈️</view>
+      <view class="text">航标查询</view>
+    </navigator>
+
+    <!-- 螺纹查询 -->
+    <navigator url="/pages/thread/metric" class="grid-item">
+      <view class="icon">🔩</view>
+      <view class="text">公制螺纹</view>
+    </navigator>
+    <navigator url="/pages/thread/g-thread" class="grid-item">
+     <view class="icon">🔩</view>
+     <view class="text">G型管螺纹</view>
+    </navigator>
+    <navigator url="/pages/thread/unified-thread" class="grid-item">
+      <view class="icon">🔩</view>
+      <view class="text">美制螺纹</view>
+    </navigator>
+    <navigator url="/pages/thread/cone-thread" class="grid-item">
+      <view class="icon">🔩</view>
+      <view class="text">锥螺纹查询</view>
+    </navigator>
+    <navigator url="/pages/thread/unified-taper-thread" class="grid-item">
+      <view class="icon">🔩</view>
+      <text>美制锥螺纹</text>
+    </navigator>
+
+    <!-- 坐标计算 -->
+    <navigator url="/pages/calculator/coordinate-rotation" class="grid-item">
+      <view class="icon">🔄</view>
+      <view class="text">坐标旋转</view>
+    </navigator>
+    <navigator url="/pages/calculator/distance-calculator" class="grid-item">
+      <view class="icon">📏</view>
+      <view class="text">距离计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/polar-cartesian-converter" class="grid-item">
+      <view class="icon">🔄</view>
+      <view class="text">极坐标转换</view>
+    </navigator>
+    <navigator url="/pages/calculator/circle-calculator" class="grid-item">
+      <view class="icon">🔵</view>
+      <view class="text">三点圆心计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/circle-points-calculator" class="grid-item">
+      <view class="icon">⭕</view>
+      <view class="text">圆周均点计算</view>
+    </navigator>
+
+    <!-- 常用计算 -->
+    <navigator url="/pages/calculator/triangle-calculator" class="grid-item">
+      <view class="icon">📐</view>
+      <view class="text">三角形计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/trigonometric-calculator" class="grid-item">
+      <view class="icon">🔢</view>
+      <view class="text">三角函数</view>
+    </navigator>    
+    <navigator url="/pages/calculator/roughness" class="grid-item">
+      <view class="icon">〰️</view>
+      <view class="text">粗糙度计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/cutting-speed" class="grid-item">
+      <view class="icon">⚡</view>
+      <view class="text">线速度计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/taper" class="grid-item">
+      <view class="icon">✍️</view>
+      <view class="text">锥度计算</view>
+    </navigator>
+    <navigator url="/pages/calculator/angle-converter" class="grid-item">
+      <view class="icon">🔄</view>
+      <view class="text">角度转换</view>
+    </navigator>
+    <navigator url="/pages/calculator/feed-conversion" class="grid-item">
+      <view class="icon">⚙️</view>
+      <view class="text">进给转换</view>
+    </navigator>
+    <navigator url="/pages/calculator/unit-converter" class="grid-item">
+      <view class="icon">🧮</view>
+      <view class="text">单位换算</view>
+    </navigator>
+
+    <!-- 常用代码查询 -->
+    <navigator url="/pages/code/index" class="grid-item">
+      <view class="icon">📚</view>
+      <view class="text">常用代码查询</view>
+    </navigator>
+  </view>
+</view>

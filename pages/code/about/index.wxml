@@ -1,0 +1,33 @@
+<view class="container">
+  <!-- 自定义更新日志弹窗 -->
+  <view wx:if="{{showUpdateLog}}" class="modal-overlay">
+    <view class="modal-content">
+      <view class="modal-title">更新日志</view>
+      <view class="update-log-content">{{updateLog}}</view>
+      <button class="modal-close-btn" bindtap="closeUpdateLog">确定</button>
+    </view>
+  </view>
+  <view class="header">关于本应用</view>
+  <view class="content">
+    <text>大版本: 1.0（2025年7月22日）</text>
+    <button bindtap="viewUpdateLog" class="update-log-btn">查看更新日志</button>
+    <text>开发者: 如梦浮尘</text>
+    <text>功能介绍: 提供机械加工相关的公差查询、螺纹计算等工具</text>
+    <text class="standard-title">数据执行标准:</text>
+    <text class="standard-item">1. 孔轴公差标准: GB/T 1800.2-2020</text>
+    <text class="standard-item">2. 自由公差标准: GB/T 1804-2020 (代替2000版)</text>
+    <text class="standard-item">3. 螺纹标准: GB/T 192-2021、GB/T 196-2021 (代替2003版)</text>
+    <text class="standard-item">4. 航空标准: HB 5800-2022 (代替1999版)</text>
+    <text class="standard-item">5. 几何公差标准: GB/T 1182-2020、ISO 1101:2017</text>
+    <text class="standard-item">6. 切削参数: 基于ISO 3685-2016标准 (代替1993版)</text>
+    <text class="standard-item">7. 单位换算: GB 3100-1993、ISO 1000:2019</text>
+    <text class="standard-title">免责声明：</text>
+    <text class="standard-item">1. 程序由如梦浮尘通过AI生成，不保证所有数据的正确性。</text>
+    <text class="standard-item">2. 可能存在部分问题未检出，即存在bug！</text>
+    <text class="standard-item">3. 有问题或需求可联系邮箱：adream2@qq.com</text>
+    <text class="standard-item">4. 来信请注明因何而来，添加需求请给详细说明。</text>
+    <text class="standard-item">5. 文章列表来自我的网站，小程序解析可能存在问题，如遇到感兴趣的文章请直接访问网站。网站地址：https://lxzt.fun/</text>
+    <text class="standard-item">6. 本应用不提供任何形式的保证，也不承担任何法律责任。</text>
+  </view>
+
+</view>

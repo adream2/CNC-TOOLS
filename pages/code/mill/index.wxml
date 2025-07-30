@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <text class="title">铣床代码查询</text>
+  </view>
+
+  <view class="grid-container">
+    <navigator url="/pages/code/mill/gcode/index" class="grid-item">
+      <view class="icon">G</view>
+      <view class="text">G代码</view>
+    </navigator>
+    <navigator url="/pages/code/mill/mcode/index" class="grid-item">
+      <view class="icon">M</view>
+      <view class="text">M代码</view>
+    </navigator>
+    <navigator url="/pages/code/mill/macro/index" class="grid-item">
+      <view class="icon">#</view>
+      <view class="text">宏代码</view>
+    </navigator>
+    <navigator url="/pages/code/mill/variable/index" class="grid-item">
+      <view class="icon">V</view>
+      <view class="text">宏变量</view>
+    </navigator>
+  </view>
+</view>
