@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">航空标准公差查询</text>
+  </view>
+
+  <view class="input-section">
+    <view class="input-item">
+      <text class="label">基本尺寸 (mm):</text>
+      <input type="digit" bindinput="bindDiameterInput" placeholder="输入尺寸范围，如30或100" class="input"/>
+    </view>
+
+    <view class="input-item">
+      <text class="label">公差等级:</text>
+      <radio-group bindchange="bindToleranceClassChange" class="radio-group">
+        <label class="radio-label">
+          <radio value="0" checked/> I级
+        </label>
+        <label class="radio-label">
+          <radio value="1"/> II级
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="input-item">
+      <text class="label">类型:</text>
+      <radio-group bindchange="bindTypeChange" class="radio-group">
+        <label class="radio-label">
+          <radio value="length" checked/> 长度
+        </label>
+        <label class="radio-label">
+          <radio value="outer"/> 外径
+        </label>
+        <label class="radio-label">
+          <radio value="inner"/> 内径
+        </label>
+      </radio-group>
+    </view>
+
+    <button bindtap="calculateAviationTolerance" class="query-btn">查询公差</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">公差结果 (HB5800-1999)</text>
+      <view class="result-item">
+        <text class="result-label">基本尺寸:</text>
+        <text class="result-value">{{diameter}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">公差等级:</text>
+        <text class="result-value">{{toleranceClasses[toleranceClassIndex]}}</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">上偏差:</text>
+        <text class="result-value">{{upperDeviation}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">下偏差:</text>
+        <text class="result-value">{{lowerDeviation}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">公差范围:</text>
+        <text class="result-value">{{toleranceRange}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,79 @@
+.container { padding: 30rpx; background-color: #f5f7fa; min-height: 100vh; }
+
+.page-header {
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #0066CC;
+}
+.thread-selector {
+  margin: 0 30rpx 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.08);
+  padding: 24rpx;
+}
+
+.selector-label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+  font-weight: bold;
+}
+
+.custom-picker {
+  width: 100%;
+}
+
+.picker-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20rpx;
+  border: 2rpx solid #e8e8e8;
+  border-radius: 12rpx;
+  background: #fafafa;
+}
+
+.picker-text {
+  font-size: 32rpx;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.picker-arrow {
+  width: 40rpx;
+  height: 40rpx;
+  transition: transform 0.3s ease;
+}
+
+.custom-picker:active .picker-content {
+  border-color: #1a73e8;
+}
+
+.custom-picker:focus .picker-content {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 4rpx rgba(26, 115, 232, 0.1);
+}
+.picker:active .arrow-icon { transform: rotate(180deg); }
+.parameter-table { background: #fff; border-radius: 16rpx; padding: 30rpx; box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.06); margin-top: 20rpx; }
+.table-title { display: block; font-size: 30rpx; color: #2c3e50; margin-bottom: 25rpx; font-weight: 600; padding-bottom: 15rpx; border-bottom: 2rpx solid #f1f5f9; }
+.table-header { display: flex; padding: 18rpx 0; background-color: #f8fafc; border-radius: 8rpx 8rpx 0 0; font-weight: 600; margin-bottom: 10rpx; }
+.table-row { display: flex; padding: 22rpx 0; border-bottom: 1rpx solid #f1f5f9; align-items: center; transition: background-color 0.2s; }
+.table-row:hover { background-color: #f8fafc; }
+.table-row:last-child { border-bottom: none; }
+.table-col { flex: 1; font-size: 28rpx; }
+.table-col:first-child { color: #64748b; padding-left: 10rpx; }
+.table-col:last-child { color: #2c3e50; font-weight: 500; }
+.picker-text { font-size: 30rpx; color: #2c3e50; }
+/* 数值高亮样式 */
+.param-value { color: #3498db; font-weight: 600; }
+/* 添加分隔线 */
+.divider { height: 1rpx; background-color: #f1f5f9; margin: 25rpx 0; }
+/* 选中状态样式 */
+.active-spec { background-color: #ebf5fb; border-left: 6rpx solid #3498db; }

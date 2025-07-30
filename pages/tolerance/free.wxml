@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">一般公差查询</text>
+  </view>
+
+  <view class="query-form">
+    <view class="form-group">
+      <view class="form-label">尺寸类型</view>
+      <picker 
+        mode="selector" 
+        range="{{dimensionTypeOptions}}" 
+        range-key="name" 
+        value="{{formData.dimensionTypeIndex}}" 
+        bindchange="handleDimensionTypeChange">
+        <view class="picker">
+          {{dimensionTypeOptions[formData.dimensionTypeIndex].name}}
+          <image class="arrow" src="/icons/arrow-down.svg" mode="aspectFit"></image>
+        </view>
+      </picker>
+      <view class="error-msg">{{errors.dimensionType}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">公差等级</view>
+      <picker 
+        mode="selector" 
+        range="{{toleranceClassOptions}}" 
+        range-key="name" 
+        value="{{formData.toleranceClassIndex}}" 
+        bindchange="handleToleranceClassChange">
+        <view class="picker">
+          {{toleranceClassOptions[formData.toleranceClassIndex].name}}
+          <image class="arrow" src="/icons/arrow-down.svg" mode="aspectFit"></image>
+        </view>
+      </picker>
+      <view class="error-msg">{{errors.toleranceClass}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">基本尺寸</view>
+      <input 
+        class="input" 
+        type="digit" 
+        placeholder="{{formData.dimensionType === 'angle' ? '请输入角度值(°)' : '请输入尺寸值(mm)'}}" 
+        value="{{formData.sizeValue}}" 
+        bindinput="handleSizeValueInput" />
+      <view class="error-msg">{{errors.sizeValue}}</view>
+    </view>
+
+    <view class="button-group">
+      <button class="reset-btn" bindtap="resetForm">重置</button>
+      <button class="query-btn" bindtap="queryTolerance">查询</button>
+    </view>
+  </view>
+
+  <view class="result-container" wx:if="{{queryResult}}">
+    <view class="result-title">查询结果</view>
+    <view class="result-content">
+      <view>尺寸类型：{{queryResult.dimensionType}}</view>
+      <view>基本尺寸：{{queryResult.sizeValue}}{{queryResult.unit}}</view>
+      <view>公差等级：{{queryResult.toleranceClass}}</view>
+      <view class="text-red">公差范围：{{queryResult.tolerance}}</view>
+    </view>
+  </view>
+
+  <view class="standard-info">
+    <view class="info-title">标准说明</view>
+    <view class="info-content">{{standardInfo}}</view>
+  </view>
+</view>
+    

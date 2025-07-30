@@ -1,0 +1,69 @@
+<!-- hole-shaft.wxml -->
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">孔和轴公差查询</text>
+  </view>
+  <view class="page-subtitle">GB/T 1800.2-2020标准</view>
+  
+  <form bindsubmit="queryTolerance">
+    <view class="form-group">
+      <view class="form-label">基本尺寸 (mm)</view>
+      <input class="form-input" type="digit" placeholder="请输入基本尺寸" bindinput="onBasicSizeInput" value="{{basicSize}}"/>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">类型</view>
+      <radio-group bindchange="onTypeChange" class="radio-group">
+        <label class="radio-label">
+          <radio value="孔" checked="{{currentType === '孔'}}"/> 孔
+        </label>
+        <label class="radio-label">
+          <radio value="轴" checked="{{currentType === '轴'}}"/> 轴
+        </label>
+      </radio-group>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">公差等级</view>
+      <picker class="form-picker" bindchange="onGradeChange" value="{{gradeList.indexOf(currentGrade)}}" range="{{gradeList}}">
+        <view class="picker">
+          当前选择：{{currentGrade}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">公差带</view>
+      <picker class="form-picker" bindchange="onToleranceChange" value="{{toleranceList.indexOf(currentTolerance)}}" range="{{toleranceList}}">
+        <view class="picker">
+          当前选择：{{currentTolerance}}
+        </view>
+      </picker>
+    </view>
+    
+    <button class="query-btn" form-type="submit">查询公差</button>
+  </form>
+  
+  <view class="result-container" wx:if="{{showResult}}">
+    <view class="result-title">查询结果</view>
+    
+    <view class="result-item">
+      <view class="item-label">尺寸公差:</view>
+      <view class="item-value dimension-display">
+        <text>{{basicSize}}</text>
+        <text class="tolerance">{{currentTolerance}}{{toleranceGrade}}</text>
+        <view class="deviation-container">
+          <text class="upper-deviation">{{upperTypeDisplay}}</text>
+          <text class="lower-deviation">{{lowerTypeDisplay}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="result-item">
+      <view class="item-label">极限尺寸:</view>
+      <view class="item-value">
+        {{maxSize}} mm ~ {{minSize}} mm
+      </view>
+    </view>
+  </view>
+</view>

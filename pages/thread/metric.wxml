@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">公制螺纹查询</text>
+  </view>
+
+  <view class="input-section">
+    <view class="input-item">
+      <text class="label">螺纹规格:</text>
+      <picker bindchange="bindThreadSizeChange" value="{{threadSizeIndex}}" range="{{threadSizes}}">
+        <view class="picker">
+          {{threadSizes[threadSizeIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-item">
+      <text class="label">螺距 (mm):</text>
+      <picker bindchange="bindPitchChange" value="{{pitchIndex}}" range="{{pitches}}">
+        <view class="picker">
+          {{pitches[pitchIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-item">
+      <text class="label">螺纹精度:</text>
+      <picker bindchange="bindAccuracyChange" value="{{accuracyIndex}}" range="{{accuracies}}">
+        <view class="picker">
+          {{accuracies[accuracyIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <button bindtap="queryThreadData" class="query-btn">查询螺纹参数</button>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <text class="result-title">螺纹参数结果</text>
+      <view class="result-item">
+        <text class="result-label">螺纹规格:</text>
+        <text class="result-value">{{selectedThreadSize}} × {{selectedPitch}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">大径 (d):</text>
+        <text class="result-value">{{majorDiameter}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">中径 (d2):</text>
+        <text class="result-value">{{pitchDiameter}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">小径 (d1):</text>
+        <text class="result-value">{{minorDiameter}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">牙型高度 (h1):</text>
+        <text class="result-value">{{threadHeight}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">底孔直径:</text>
+        <text class="result-value">{{drillSize}} mm</text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">公差带:</text>
+        <text class="result-value">{{toleranceBand}}</text>
+      </view>
+    </view>
+  </view>
+</view>

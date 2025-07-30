@@ -1,0 +1,117 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #0066CC;
+}
+
+.input-section {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+  margin-bottom: 30rpx;
+}
+
+.input-item {
+  margin-bottom: 25rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.input {
+  width: 100%;
+  height: 60rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 6rpx;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+}
+
+.picker {
+  width: 100%;
+  height: 60rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 6rpx;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 30rpx;
+}
+
+.query-btn {
+  width: 100%;
+  height: 80rpx;
+  background-color: #0066CC;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+}
+
+.result-section {
+  margin-top: 30rpx;
+}
+
+.result-card {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 25rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #0066CC;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.result-item {
+  display: flex;
+  margin-bottom: 15rpx;
+}
+
+.result-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.result-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}

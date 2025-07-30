@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">美制螺纹查询</text>
+  </view>
+  <view class="selector-group">
+    <view class="selector-item">
+      <text class="label">螺纹规格</text>
+      <picker bindchange="onSpecificationChange" value="{{specificationIndex}}" range="{{specificationList}}">
+        <view class="picker">
+          {{specificationList[specificationIndex]}}
+          <image src="/icons/arrow-down.svg" class="arrow-icon"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="selector-item">
+      <text class="label">精度等级</text>
+      <radio-group bindchange="onToleranceChange" class="radio-group" value="{{toleranceIndex}}">
+        <label class="radio-label" wx:for="{{toleranceList}}" wx:key="index">
+          <radio value="{{index}}"/>
+          <text class="radio-text">{{item}}</text>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="result-card" wx:if="{{threadData}}">
+    <view class="result-title">螺纹参数 (ANSI/ASME B1.1)</view>
+    <view class="param-table">
+      <view class="table-row header">
+        <view class="table-cell">参数</view>
+        <view class="table-cell">基本尺寸 (in)</view>
+        <view class="table-cell">最小值 (in)</view>
+        <view class="table-cell">最大值 (in)</view>
+      </view>
+      <view class="table-row">
+        <view class="table-cell">大径 (d/D)</view>
+        <view class="table-cell">{{threadData.majorDiameter.max}}</view>
+        <view class="table-cell">{{threadData.majorDiameter.min}}</view>
+        <view class="table-cell">{{threadData.majorDiameter.max}}</view>
+      </view>
+      <view class="table-row">
+        <view class="table-cell">螺距 (P)</view>
+        <view class="table-cell">{{threadData.pitch}}</view>
+        <view class="table-cell">{{threadData.pitchDiameter.min}}</view>
+        <view class="table-cell">{{threadData.pitchDiameter.max}}</view>
+      </view>
+      <view class="table-row">
+        <view class="table-cell">小径 (d1/D1)</view>
+        <view class="table-cell"></view>
+        <view class="table-cell">{{threadData.minorDiameter.min}}</view>
+        <view class="table-cell">{{threadData.minorDiameter.max}}</view>
+      </view>
+    </view>
+    <view class="spec-note">
+      <text>系列: {{threadData.threadSeries}}</text>
+      <text wx:if="{{threadData.tolerance.includes('A')}}" class="external-note">外螺纹 ({{threadData.tolerance}})</text>
+      <text wx:else class="internal-note">内螺纹 ({{threadData.tolerance}})</text>
+    </view>
+  </view>
+</view>

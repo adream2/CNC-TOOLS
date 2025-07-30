@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">锥螺纹查询</text>
+  </view>
+  <view class="thread-selector">
+    <text class="selector-label">锥螺纹规格选择</text>
+    <picker bindchange="onSpecificationChange" value="{{selectedIndex}}" range="{{specNames}}" class="custom-picker">
+      <view class="picker-content">
+        <text class="picker-text">{{specNames[selectedIndex]}}</text>
+        <image src="/icons/arrow-down.svg" class="picker-arrow"></image>
+      </view>
+    </picker>
+  </view>
+
+  
+<view class="parameter-table">
+    <text class="table-title">螺纹参数 (GB/T 7306.1-2000)</text>
+    <view class="table-header">
+      <view class="table-col">参数</view>
+      <view class="table-col">基本尺寸 (mm)</view>
+    </view>
+    <view class="table-row">
+      <view class="table-col">大径 (d)</view>
+      <view class="table-col">{{threadParams ? threadParams.d : '-'}}</view>
+    </view>
+    <view class="table-row">
+      <view class="table-col">螺距 (P)</view>
+      <view class="table-col">{{threadParams ? threadParams.pitch : '-'}}</view>
+    </view>
+    <view class="table-row">
+      <view class="table-col">牙高</view>
+      <view class="table-col">{{threadParams ? threadParams.toothHeight : '-'}}</view>
+    </view>
+    <view class="table-row">
+      <view class="table-col">每英寸牙数</view>
+      <view class="table-col">{{threadParams ? threadParams.threadsPerInch : '-'}}</view>
+    </view>
+  </view>
+</view>
